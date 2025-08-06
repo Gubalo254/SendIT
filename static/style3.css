@@ -1,0 +1,137 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f0fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Top Nav Bar */
+.top-part {
+    background-color: #4b0082;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.top-part h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.top-part nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.top-part nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.top-part nav ul li a:hover {
+    color: #dda0dd;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    padding: 2rem;
+}
+
+/* Main Content */
+.main-content {
+    background-color: #fff;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(128, 0, 128, 0.1);
+}
+
+.main-content h1 {
+    color: #4b0082;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Parcel Section */
+.parcel-list h2 {
+    color: #6a0dad;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fafaff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #e6ccff;
+}
+
+thead th {
+    padding: 1rem;
+    color: #4b0082;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+tbody td {
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+/* Inputs and Selects */
+select, input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+select:disabled, input:disabled {
+    background-color: #eee;
+    color: #666;
+}
+
+/* Save Button */
+.update-btn {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #9932cc;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+.update-btn:hover {
+    background-color: #7a1fa2;
+}

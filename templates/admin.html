@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SendIT | Admin Panel</title>
+  <link rel="stylesheet" href="static/style3.css" >
+</head>
+<body>
+  <div class="dashboard-container">
+     <div class="top-part">
+      <h2>SendIT</h2>
+      <nav>
+        <ul>
+          <li><a href="admin.html">Admin Panel</a></li>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </nav>
+     </div>
+
+    <main class="main-content">
+      <h1>Admin Dashboard</h1>
+
+      <section class="parcel-list">
+        <h2>All Parcels</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Pickup</th>
+              <th>Destination</th>
+              <th>Status</th>
+              <th>Current Location</th>
+              <th>Update Status</th>
+              <th>Update Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1234</td>
+              <td>Lagos</td>
+              <td>Abuja</td>
+              <td>In Transit</td>
+              <td>Ibadan</td>
+              <td>
+                <select>
+                  <option>In Transit</option>
+                  <option>Delivered</option>
+                  <option>Cancelled</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" placeholder="Enter new location" />
+              </td>
+            </tr>
+            <tr>
+              <td>#5678</td>
+              <td>Nairobi</td>
+              <td>Kampala</td>
+              <td>Delivered</td>
+              <td>Kampala</td>
+              <td>
+                <select disabled>
+                  <option>Delivered</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" disabled placeholder="Parcel Delivered" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="update-btn">Save Updates</button>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+
+</body>
+</html>

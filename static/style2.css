@@ -1,0 +1,284 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3eaff;
+    color: #4b0082;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(75, 0, 130, 0.2);
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4b0082;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1b3ff;
+    border-radius: 6px;
+    background-color: #f9f7ff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #9932cc;
+    outline: none;
+    box-shadow: 0 0 6px rgba(153, 50, 204, 0.4);
+}
+
+/* Submit button */
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #9932cc;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #9932cc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-info:hover {
+    background-color: #9932cc;
+    color: white;
+}
+
+/* Border-top section */
+.border-top {
+    border-top: 1px solid #ddd;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Link */
+a {
+    color: #9932cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Nav bar container */
+.top-part {
+    background-color: #4b0082;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* List layout */
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; /* You can change to center or space-between */
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Individual nav items */
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #dda0dd;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4b0082;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(153, 50, 204, 0.2);
+}
+h2 {
+    font-size: 2rem;
+    color: #6a0dad;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+h2 {
+    text-shadow: 1px 1px 2px rgba(153, 50, 204, 0.1);
+}
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #9932cc;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+/* Main content layout */
+.main-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(128, 0, 128, 0.15);
+}
+
+/* Heading */
+.main-content h1 {
+    font-size: 2.5rem;
+    color: #4b0082;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(153, 50, 204, 0.1);
+}
+
+/* Stats section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background-color: #f3eaff;
+    border-left: 5px solid #9932cc;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(153, 50, 204, 0.1);
+}
+
+.stat-box h3 {
+    color: #4b0082;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.stat-box p {
+    font-size: 2rem;
+    color: #9932cc;
+    font-weight: bold;
+}
+
+/* Parcel list table */
+.parcel-list h2 {
+    color: #6a0dad;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #fafaff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #e6ccff;
+}
+
+thead th {
+    padding: 1rem;
+    text-align: left;
+    color: #4b0082;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+tbody td {
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    color: #333;
+}
+
+/* Optional hover effect */
+tbody tr:hover {
+    background-color: #f0e6ff;
+}
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Base Button Style */
+
+
+/* Change Destination Button */
+.btn-change {
+    background-color: #9932cc;
+    color: white;
+}
+
+.btn-change:hover {
+    background-color: #7a1fa2;
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background-color: transparent;
+    color: #9932cc;
+    border: 2px solid #9932cc;
+}
+
+.btn-cancel:hover {
+    background-color: #f3eaff;
+}
