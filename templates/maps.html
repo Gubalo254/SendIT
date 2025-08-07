@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Delivery Route - SendIT</title>
+    <link rel="stylesheet" href="/static/maps.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQjMEjsdEXsYZVyGS15r7pt-ZUQKRqU3c&libraries=places"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">SendIT</div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Parcel Delivery Route</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.pickup.label(class="form-control-label") }}
+                {{ form.pickup(id="pickup", class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.destination.label(class="form-control-label") }}
+                {{ form.destination(id="destination", class="form-control") }}
+            </div>
+            {{ form.submit(class="btn btn-outline-info") }}
+        </form>
+        <div id="map"></div>
+        <div id="travel-info" style="display: none;">
+            <p><strong>Distance:</strong> <span id="distance"></span></p>
+            <p><strong>Duration:</strong> <span id="duration"></span></p>
+        </div>
+    </div>
+    <script>
+        let map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 0, lng: 0 },
+                zoom: 2,
+            });
+
+            const pickupInput = document.getElementById('pickup');
+            const destinationInput = document.getElementById('destination');
+            const pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput);
+            const destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
+
+            const pickup = "{{ pickup }}";
+            const destination = "{{ destination }}";
+            if (pickup && destination) {
+                pickupInput.value = pickup;
+                destinationInput.value = destination;
+                showRoute(pickup, destination);
+            }
+        }
+
+        function showRoute(pickup, destination) {
+            const directionsService = new google.maps.DirectionsService();
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+
+            directionsService.route(
+                {
+                    origin: pickup,
+                    destination: destination,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                },
+                (result, status) => {
+                    if (status === google.maps.DirectionsStatus.OK) {
+                        directionsRenderer.setDirections(result);
+                        const route = result.routes[0].legs[0];
+                        new google.maps.Marker({
+                            position: route.start_location,
+                            map: map,
+                            label: 'P',
+                            title: 'Pickup Location',
+                        });
+                        new google.maps.Marker({
+                            position: route.end_location,
+                            map: map,
+                            label: 'D',
+                            title: 'Destination',
+                        });
+                        document.getElementById('distance').textContent = route.distance.text;
+                        document.getElementById('duration').textContent = route.duration.text;
+                        document.getElementById('travel-info').style.display = 'block';
+                        const bounds = new google.maps.LatLngBounds();
+                        bounds.extend(route.start_location);
+                        bounds.extend(route.end_location);
+                        map.fitBounds(bounds);
+                    } else {
+                        alert('Could not find a route: ' + status);
+                    }
+                }
+            );
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+</html>
