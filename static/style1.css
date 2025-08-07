@@ -1,29 +1,76 @@
-/* Reset some default styles */
-body, h1, h2, h3, p, a, input, label, button {
+/* Reset default styles */
+body, h1, h2, h3, p, a, input, label, button, select, table, th, td {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: #f4f0fa;
-    color: #3d0066;
+    color: #4b0082;
+    min-height: 100vh;
+}
+
+/* Navigation */
+.nav {
+    background-color: #4b0082;
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.nav-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    color: #e6e6fa;
+}
+
+/* Container */
 .container {
-    background-color: #fff;
-    padding: 2rem 2.5rem;
+    background-color: white;
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.2);
+    box-shadow: 0 4px 15px rgba(75, 0, 130, 0.2);
     width: 100%;
-    max-width: 400px;
+    max-width: 1200px;
+    margin: 2rem auto;
 }
 
+/* Headings */
+h1, h2 {
+    color: #4b0082;
+    margin-bottom: 1.5rem;
+}
+
+.profile-header {
+    background-color: #9900cc;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Form Styles */
 .form-group {
     margin-bottom: 1.2rem;
 }
@@ -51,13 +98,13 @@ body {
 }
 
 .btn {
-    width: 100%;
-    padding: 0.7rem;
+    padding: 0.7rem 1.5rem;
     border: 2px solid #9900cc;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    text-align: center;
 }
 
 .btn-outline-info {
@@ -68,6 +115,21 @@ body {
 .btn-outline-info:hover {
     background-color: #9900cc;
     color: white;
+}
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
 }
 
 .border-top {
@@ -86,4 +148,51 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Profile Stats */
+.profile-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #e6e6fa;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    color: #9900cc;
+    font-weight: bold;
+}
+
+/* Tables */
+.parcel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.parcel-table th, .parcel-table td {
+    padding: 0.8rem;
+    border: 1px solid #ccccff;
+    text-align: left;
+}
+
+.parcel-table th {
+    background-color: #9900cc;
+    color: white;
+}
+
+.parcel-table td {
+    background-color: #fafaff;
+}
+
+.parcel-table tr:nth-child(even) td {
+    background-color: #f4f0fa;
 }

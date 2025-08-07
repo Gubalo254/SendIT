@@ -2,45 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register Page</title>
-  <link rel="stylesheet" href="static/style1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SendIT</title>
+    <link rel="stylesheet" href="/static/style1.css">
 </head>
 <body>
-<div class="container  " >
-    <form method="POST" action="{{ url_for('register_page') }}">
-        {{form.hidden_tag()}}
-        <div class="form-group">
-            {{form.username.label(class = "form-control-label")}}
-            {{form.username(class = "form-control form-control")}}
-
+    <div class="container">
+        <h1>Register</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label") }}
+                {{ form.email(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class="form-control-label") }}
+                {{ form.password(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.confirm_password.label(class="form-control-label") }}
+                {{ form.confirm_password(class="form-control") }}
+            </div>
+            {{ form.submit(class="btn btn-outline-info") }}
+        </form>
+        <div class="border-top">
+            <p>Do you have an account? <a href="/login">Login</a></p>
         </div>
-        <div class="form-group">
-            {{form.email.label(class = "form-control-label")}}
-            {{form.email(class = "form-control form-control")}}
-
-        </div>
-        <div class="form-group">
-            {{form.password.label(class = "form-control-label")}}
-            {{form.password(class = "form-control form-control")}}
-
-        </div>
-        <div class="form-group">
-            {{form.confirm_password.label(class = "form-control-label")}}
-            {{form.confirm_password(class = "form-control form-control")}}
-
-        </div>
-        <div class="form-group">
-            {{form.submit(class = "btn btn-outline-info")}}
-
-
-        </div>
-
-    </form>
-    <div class="border-top pt-3">
-        <small class="text muted"></small>
-        <p>Do you have an account?<a href="{{ url_for('login_page') }}">Login</a> </p>
     </div>
-</div>
-
 </body>
 </html>
