@@ -10,7 +10,9 @@ def init_routes(app):
         if form.validate_on_submit():
             pickup = form.pickup.data
             destination = form.destination.data
-        return render_template("maps.html", form=form, pickup=pickup, destination=destination)
+        return render_template("maps.html", form=form, pickup=pickup, destination=destination,
+                               google_maps_api_key=app.config['GOOGLE_MAPS_API_KEY'])
+
 
     @app.route("/register", methods=["POST", "GET"])
     def register_page():
